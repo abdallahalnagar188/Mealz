@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Mealz"
 include(":app")
 include(":data")
+include(":domain")
