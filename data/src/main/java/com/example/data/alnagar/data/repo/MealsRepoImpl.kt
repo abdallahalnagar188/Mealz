@@ -5,5 +5,5 @@ import com.example.domain.alnagar.entity.CategoryResponse
 import com.example.domain.alnagar.repo.MealsRepo
 
 class MealsRepoImpl(private val apiService: ApiService) : MealsRepo {
-    override fun getMealsFromRemote(): CategoryResponse = apiService.getMeals()
+    override suspend fun getMealsFromRemote(): CategoryResponse = apiService.getMeals()
 }
