@@ -13,17 +13,20 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MealsViewModel @Inject constructor(
-    private val getMealsUsaCase: GetMealz
+    private val getMealsUseCase: GetMealz
 ) : ViewModel() {
+
     private val _categories: MutableStateFlow<CategoryResponse?> = MutableStateFlow(null)
-    val categories :StateFlow<CategoryResponse?> = _categories
+    val categories: StateFlow<CategoryResponse?> = _categories
+
     fun getMeals() {
         viewModelScope.launch {
             try {
-                _categories.value = getMealsUsaCase()
+                _categories.value = getMealsUseCase()
             } catch (e: Exception) {
                 Log.e("MealsViewModel", e.message.toString())
             }
         }
     }
+
 }
