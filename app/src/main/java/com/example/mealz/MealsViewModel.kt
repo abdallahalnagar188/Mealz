@@ -28,5 +28,4 @@ class MealsViewModel @Inject constructor(
             }
         }
     }
-
 }
